@@ -13,7 +13,7 @@ describe SlackMrkdwn do
     Test.new('converts combined emphasis', 'Combined emphasis with **asterisks and _underscores_**.', 'Combined emphasis with *asterisks and _underscores_*.'),
     Test.new('converts strike-through', '~~Crossed out~~ content', '~Crossed out~ content'),
     Test.new('converts codeblocks', "```javascript\nconsole.log('Hello, World!')\n```", "```\nconsole.log('Hello, World!')\n```"),
-    Test.new('converts unordered lists', "+ List with plus symbol\n* Or asterisk\n- Or minus symbol\n\t+ Even indented lists", "- List with plus symbol\n- Or asterisk\n- Or minus symbol\n   - Even indented lists"),
+    Test.new('converts unordered lists', "+ List with plus symbol\n* Or asterisk\n- Or minus symbol\n\t+ Even indented lists", "• List with plus symbol\n• Or asterisk\n• Or minus symbol\n   • Even indented lists"),
     Test.new('converts ordered lists', "1. First element\n1. Second element\n1. Third element", "1. First element\n2. Second element\n3. Third element"),
     Test.new('converts nested lists', "1. First element\n   1. Nested element\n   1. Another nested element\n1. Second element\n1. Third element", "1. First element\n   1. Nested element\n   2. Another nested element\n2. Second element\n3. Third element"),
     Test.new('converts image', "![](https://example.com/image.png)", 'https://example.com/image.png'),
@@ -27,7 +27,7 @@ describe SlackMrkdwn do
     Test.new('preserves leading spaces', "   Aligned text content", "   Aligned text content"),
     Test.new('preserves paragraphs', 'My paragraph looks the same!', 'My paragraph looks the same!'),
     Test.new('preserves spacing between paragraphs', "My first paragraph!\n\nFollowed by another paragraph!", "My first paragraph!\n\nFollowed by another paragraph!"),
-    Test.new('preserves spacing between lists and paragraphs', "Description of list:\n\n* List Element\n+ Another list element\n\nFollow up paragraph.", "Description of list:\n\n- List Element\n- Another list element\n\nFollow up paragraph."),
+    Test.new('preserves spacing between lists and paragraphs', "Description of list:\n\n* List Element\n+ Another list element\n\nFollow up paragraph.", "Description of list:\n\n• List Element\n• Another list element\n\nFollow up paragraph."),
   ]
 
   tests.each do |t|
