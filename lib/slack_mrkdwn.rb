@@ -133,12 +133,12 @@ class SlackMrkdwn < Redcarpet::Render::Base
     when :ordered
       number_list(entries)
     when :unordered
-      add_dashes(entries)
+      add_dots(entries)
     end
   end
 
-  def add_dashes(entries)
-    entries.gsub(/^(\S+.*)$/, '- \1')
+  def add_dots(entries)
+    entries.gsub(/^(\S+.*)$/, '• \1')
   end
 
   def number_list(entries)
